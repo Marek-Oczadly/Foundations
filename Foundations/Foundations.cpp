@@ -6,8 +6,9 @@
 
 int main()
 {
-    EuclidsAlgorithm x (1256, 1280);
-    std::cout << x.highest_common_factor() << std::endl;
+	EuclidsAlgorithm x (1256, 1280);
+	x.verboseHighestCommonFactor();
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
