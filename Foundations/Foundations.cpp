@@ -6,7 +6,7 @@
 
 int main()
 {
-	EuclidsAlgorithm x (52, 65);
+	EuclidsAlgorithm x (100, 100);
 	x.verboseHighestCommonFactor();
 	return 0;
 }
