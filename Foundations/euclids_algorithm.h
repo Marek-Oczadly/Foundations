@@ -27,9 +27,9 @@ public:
 		b = y;
 		while (true) {
 			c = a % b;
-			std::cout << a << " = " << (a / b) << " * " << b << " + " << c << "\n";
+			std::cout << a << " = (" << (a / b) << " * " << b << ") + " << c << "\n";
 			if (b % c == 0) {
-				std::cout << a << " = " << (a / b) << " * " << b << " + 0\n";
+				std::cout << b << " = (" << (b / c) << " * " << c << ") + 0\n";
 				std::cout << "Highest common factor is: " << c << "\n";
 				return c; 
 			} else { a = b; b = c; }
