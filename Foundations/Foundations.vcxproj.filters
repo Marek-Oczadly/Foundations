@@ -23,5 +23,8 @@
     <ClInclude Include="generate_primes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="euclids_algorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

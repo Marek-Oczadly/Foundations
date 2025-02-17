@@ -25,8 +25,8 @@ public:
 		return true;
 	}
 
-	void run() {
-		const std::unique_ptr<unsigned long long[]> PRIMES;
+	unsigned long long* run() const {
+		unsigned long long* const PRIMES = new (unsigned long long[NUM_PRIMES]);
 		PRIMES[0] = 2;
 		unsigned long long* filled = &PRIMES[0] + 1;
 		unsigned long long num = 3;
@@ -37,10 +37,15 @@ public:
 			}
 			num += 2;
 		}
-		// Saving into the file
-		for (const unsigned long long* i = &PRIMES[0];
-			i < &PRIMES[0] + NUM_PRIMES; ++i) {
+		return PRIMES;
+	}
+
+	void save(unsigned long long* const primes) {
+		for (const unsigned long long* i = &primes[0];
+			i < &primes[0] + NUM_PRIMES; ++i) {
 			PRIMES_FILE << *i << "\n";
 		}
+		delete[] primes;
 	}
+
 };

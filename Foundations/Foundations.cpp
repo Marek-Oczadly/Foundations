@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
+#include "euclids_algorithm.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    EuclidsAlgorithm x (1256, 1280);
+    std::cout << x.highest_common_factor() << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

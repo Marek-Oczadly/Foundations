@@ -130,6 +130,7 @@
     <ClCompile Include="Foundations.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="euclids_algorithm.h" />
     <ClInclude Include="generate_primes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
