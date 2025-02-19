@@ -6,8 +6,8 @@
 
 int main()
 {
-	EuclidsAlgorithm x (100, 100);
-	x.verboseHighestCommonFactor();
+	EuclidsAlgorithm x (52, 65);
+	std::cout << x.integerSolution(13) << std::endl;
 	return 0;
 }
 
