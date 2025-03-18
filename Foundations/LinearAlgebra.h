@@ -32,6 +32,19 @@ public:
 		ROWS(rows), COLS(cols), DATA(allocate(rows, cols)) {
 	}
 
+	Matrix(const std::initializer_list<std::initializer_list<T>>& init) :
+		Matrix(init.size(), init.begin()->size()) {
+		T* const* row = DATA;
+		for (const std::initializer_list<T>& i : init) {
+			if (i.size() != COLS) throw std::length_error("The size of all initializer lists must match"); 
+			T* val = *row;
+			for (const T& j : i) {
+				*val = j; ++val;
+			}
+			++row;
+		}
+	}
+
 	~Matrix() {
 		for (T** row = DATA; row < DATA + ROWS; ++row) {
 			delete[] * row;
