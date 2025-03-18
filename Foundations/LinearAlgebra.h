@@ -12,7 +12,7 @@ protected:
 	const unsigned int ROWS;
 	const unsigned int COLS;
 
-	T** const DATA;
+	T** DATA;
 
 	T** const allocate(const unsigned int rows, const unsigned int cols) const {
 		T** data = new T* [rows];
@@ -45,6 +45,23 @@ public:
 		}
 	}
 
+	Matrix(const Matrix<T>& other) :
+		Matrix(other.ROWS, other.COLS) {
+		const T* const* o_row = other.DATA;
+		for (T* const* row = DATA; row < DATA + ROWS; ++row, ++o_row) {
+			const T* o_val = *o_row;
+			for (T* val = *row; val < *row + COLS; ++val, ++o_val) {
+				*val = *o_val;
+			}
+		}
+	}
+
+	Matrix(Matrix<T>&& other) :
+		ROWS(other.ROWS), COLS(other.COLS), DATA(other.DATA) {
+		other.DATA = nullptr;
+	}
+
+
 	~Matrix() {
 		for (T** row = DATA; row < DATA + ROWS; ++row) {
 			delete[] * row;
@@ -68,7 +85,6 @@ public:
 		 if (row > ROWS) throw std::out_of_range("The row does not correspond to a row in the matrix");
 		 return *(DATA + row);
 	 }
-
 };
 
 

@@ -7,7 +7,8 @@
 
 int main() {
 	Matrix<int> m = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
-	IdentityMatrix<int> i(3);
+	Matrix<int> k = m;
 	std::cout << m.display() << std::endl;
+	std::cout << k.display() << std::endl;
 	return 0;
 }
